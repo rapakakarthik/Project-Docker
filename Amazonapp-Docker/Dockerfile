@@ -5,5 +5,9 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 COPY index.html /var/www/html/
+COPY styles.css /var/www/html/
+# COPY banner.jpg /var/www/html/
+# COPY product.jpg /var/www/html/
+COPY images /var/www/html/
 EXPOSE 80
 CMD ["apachectl", "-D", "FOREGROUND"]
